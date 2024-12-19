@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9.0.1/swiper-bundle.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #cc0000;
+            color: #333;
+            padding: 0 15px;
+        }
+
+        /* Stylish Heading */
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 48px;
+            text-align: center;
+            color: transparent;
+            background: linear-gradient(90deg, #ff8c00, #ff0066);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Gallery Container */
+        .gallery {
+            max-width: 1200px;
+            margin: 30px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-header p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Swiper Styles */
+        .swiper {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .swiper-slide img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .swiper-slide img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Thumbnail Container */
+        .swiper-thumbnails {
+            width: 100%;
+            height: 120px;
+            margin-top: 20px;
+        }
+
+        .swiper-thumbnails .swiper-slide {
+            opacity: 0.5;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: opacity 0.3s ease, border-color 0.3s ease;
+            margin: 5px;
+        }
+
+        .swiper-thumbnails .swiper-slide:hover {
+            opacity: 1;
+        }
+
+        .swiper-thumbnails .swiper-slide.swiper-slide-thumb-active {
+            opacity: 1;
+            border-color: #a83232;
+        }
+
+        .swiper-thumbnails img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Navigation Buttons */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #a83232;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: #a83232;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .swiper {
+                height: 300px;
+            }
+
+            .swiper-thumbnails {
+                height: 80px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .gallery-header p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="gallery">
+    <div class="gallery-header">
+        <h1>Image Gallery</h1>
+        <p>Explore our beautiful collection of modern and vibrant images.</p>
+    </div>
+
+    <!-- Main Swiper -->
+    <div class="swiper gallery-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-photo/smiling-lady-red-outfit-looks-into-camera-pink-background_197531-15056.jpg" alt="Gallery Image 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-photo/portrait-young-happy-smiling-woman-model-with-bright-makeup-colorful-lips-with-two-pigtails-sunglasses-summer-red-clothes-isolated-showing-fuck-off-sign_158538-8691.jpg" alt="Gallery Image 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-photo/beautiful-young-woman-wearing-professional-makeup_23-2150165295.jpg" alt="Gallery Image 3">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-photo/beautiful-young-woman-wearing-professional-makeup_23-2150165307.jpg" alt="Gallery Image 4">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-psd/watercolour-swatch-isolated_23-2151191669.jpg" alt="Gallery Image 5">
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Thumbnail Swiper -->
+    <div class="swiper swiper-thumbnails">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-photo/young-beautiful-hipster-bad-girl-trendy-red-summer-hoodie-earring-her-nose-sexy-carefree-woman-pink-wig-posing-studio-gray-background-hot-model_158538-15587.jpg" alt="Thumbnail 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-photo/curly-woman-red-coat-moving-pink_197531-7831.jpg" alt="Thumbnail 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-photo/real-estate-sad-woman-thinking-buying-own-house-showing-paper-home-cutout-looking-up-with-usp_1258-64414.jpg" alt="Thumbnail 3">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-photo/red-sports-tuned-car-rear-view-wheel-close-up_78492-3674.jpg" alt="Thumbnail 4">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://img.freepik.com/free-photo/vertical-selective-focus-red-gerbera-with-dewy-petals_181624-38008.jpg" alt="Thumbnail 5">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper@9.0.1/swiper-bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script>
+    // Main Swiper
+    const gallerySwiper = new Swiper('.gallery-swiper', {
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    // Thumbnails Swiper
+    const thumbnailSwiper = new Swiper('.swiper-thumbnails', {
+        loop: true,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+
+    // Sync Swipers
+    gallerySwiper.controller.control = thumbnailSwiper;
+    thumbnailSwiper.controller.control = gallerySwiper;
+</script>
+
+</body>
+</html>
